@@ -1,0 +1,19 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:11.0-alpine
+    user: 70:70
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5444:5432
+    volumes:
+      - /postgres-docker:/var/lib/postgresql/data
+      - /tmp:/tmp
+  adminer:
+    image: adminer
+    restart: always
+  
+      - 8088:8080
