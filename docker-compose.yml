@@ -2,7 +2,7 @@ version: '2'
 services:
   postgres:
     image: postgres:11.0-alpine
-    user: postgres:postgres
+    user: 109:70
     restart: always
     environment:
       POSTGRES_USER: postgres
