@@ -1,4 +1,4 @@
-version: '2'
+name: postgres
 services:
   postgres:
     image: postgres:13.4-alpine
@@ -14,3 +14,8 @@ services:
   adminer:
     image: adminer
     restart: always
+    depends_on:
+      - postgres
+networks:
+  default:
+    name: postgres_default
